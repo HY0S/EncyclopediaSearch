@@ -2,6 +2,9 @@ package com.example.EncyclopediaSearch.config;
 
 import io.netty.resolver.DefaultAddressResolverGroup;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,6 +19,7 @@ import reactor.netty.http.client.HttpClient;
 @Slf4j
 @Configuration
 public class WebClientConfig {
+
     @Bean
     public WebClient encyclopediaWebClient(@Value("${naver.api.base-url}") String baseUrl) {
         HttpClient httpClient = HttpClient.create()

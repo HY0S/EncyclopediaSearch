@@ -12,7 +12,7 @@ spring:
 naver:
   api:
     base-url: https://openapi.naver.com/v1/search
-    client-id: ${naver.api.client-id}
+      client-id: ${naver.api.client-id}
     client-secret: ${naver.api.client-secret}
     default-display: 10
 
