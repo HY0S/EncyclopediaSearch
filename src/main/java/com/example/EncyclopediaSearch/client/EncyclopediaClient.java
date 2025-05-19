@@ -29,7 +29,7 @@ public class EncyclopediaClient {
     public Mono<EncyclopediaSearchResponse> searchEncyclopedias(String keyword) {
         return encyclopediaWebClient.get()
                 .uri(uriBuilder -> uriBuilder
-                        .path("/v1/search/encyc.json")
+                        .path("/encyc.json")
                         .queryParam("query", keyword)
                         .queryParam("display", maxResults)
                         .build()

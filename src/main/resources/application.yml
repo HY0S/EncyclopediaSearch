@@ -12,8 +12,8 @@ spring:
 naver:
   api:
     base-url: https://openapi.naver.com/v1/search
-      client-id: ${naver.api.client-id}
-    client-secret: ${naver.api.client-secret}
+    client-id: X56LS44My6N59TADrp8f
+    client-secret: zfpsGIXmdf
     default-display: 10
 
 management:

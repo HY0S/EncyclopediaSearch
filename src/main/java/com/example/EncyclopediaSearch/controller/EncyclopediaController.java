@@ -16,14 +16,13 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping(value="v1/search/encyc.json") // https://openapi.naver.com/v1/search/encyc.json?query=...
+@RequestMapping("/search") // https://openapi.naver.com/v1/search/encyc.json?query=...
 @RequiredArgsConstructor
 public class EncyclopediaController {
     private final EncyclopediaService encyclopediaService;
-
+    
     @GetMapping
-    public Mono<ResponseEntity<List<EncyclopediaResultDto>>> search(
-            @RequestParam(value = "keyword", required = false) String keyword){
+    public Mono<ResponseEntity<List<EncyclopediaResultDto>>> search(@RequestParam(value = "keyword") String keyword){
         if (keyword == null || keyword.isBlank()) {
             log.warn("Missing or empty keyword parameter");
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Missing request parameter: keyword");
